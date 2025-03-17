@@ -9,6 +9,11 @@ import jakarta.persistence.Id;
 public class Word {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String word;
+    public Integer id;
+    public String word;
+
+    public Word setWord(String word) {
+        this.word = word;
+        return this;
+    }
 }
