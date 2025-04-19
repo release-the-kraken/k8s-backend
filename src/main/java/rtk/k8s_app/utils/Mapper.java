@@ -11,6 +11,6 @@ public class Mapper {
     }
 
     public Word mapToWord(WordDTO dto){
-        return new Word().setWord(dto.word());
+        return new Word().setWord(dto.word);
     }
 }

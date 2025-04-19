@@ -1,5 +1,6 @@
 package rtk.k8s_app.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rtk.k8s_app.model.WordDTO;
@@ -18,7 +19,7 @@ public class WordController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<WordDTO> saveWord(@RequestBody WordDTO request){
+    public ResponseEntity<WordDTO> saveWord(@RequestBody @Valid WordDTO request){
         Logger.info("POST Save word API called");
         WordDTO response = service.saveWord(request);
         return ResponseEntity.ok(response);
